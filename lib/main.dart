@@ -81,40 +81,82 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: MaterialButton(
-          onPressed: (){
-            _googleSignIn.signIn().then((value){
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MaterialButton(
+              onPressed: (){
+                _googleSignIn.signIn().then((value){
 
-              String userName=value!.displayName!;
-              String email=value!.email!;
-              String photo=value!.photoUrl!;
-              String userId=value!.id!;
+                  String userName=value!.displayName!;
+                  String email=value!.email!;
+                  String photo=value!.photoUrl!;
+                  String userId=value!.id!;
 
-              print("Name= "+userName);
+                  print("Name= "+userName);
 
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>ChattingPageScreen4(
-                userName: userName,
-                email: email,
-                photo: photo,
-                userId: userId,
-              )));
-            });
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ChattingPageScreen4(
+                    userName: userName,
+                    email: email,
+                    photo: photo,
+                    userId: userId,
+                  )));
+                });
 
-          },
-          color: Colors.green,
-          padding: EdgeInsets.only(left: 25,right: 25,top: 10,bottom: 10),
-          child: Text(
-            "Google Sign in ",
-            style: TextStyle(
-              color: Colors.red,
-              fontSize: 25,
-              fontWeight: FontWeight.w500
+              },
+              color: Colors.green,
+              padding: EdgeInsets.only(left: 25,right: 25,top: 10,bottom: 10),
+              child: Text(
+                "Google Sign in ",
+                style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 25,
+                    fontWeight: FontWeight.w500
+                ),
+
+
+              ),
+
             ),
+            SizedBox(height: 20,),
+            MaterialButton(
+              onPressed: (){
+                _googleSignIn.signIn().then((value){
+
+                  String userName=value!.displayName!;
+                  String email=value!.email!;
+                  String photo=value!.photoUrl!;
+                  String userId=value!.id!;
+
+                  print("Name= "+userName);
+
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ChattingPageScreen4(
+                    userName: userName,
+                    email: email,
+                    photo: photo,
+                    userId: userId,
+                  )));
+                });
+
+              },
+              color: Colors.green,
+              padding: EdgeInsets.only(left: 25,right: 25,top: 10,bottom: 10),
+              child: Text(
+                "Facebook Sign in",
+                style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 25,
+                    fontWeight: FontWeight.w500
+                ),
 
 
-          ),
+              ),
 
-        ),
+            ),
+          ],
+        )
+
+
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
@@ -124,3 +166,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+// VzSiQcXRmi2kyjzcA+mYLEtbGVs=

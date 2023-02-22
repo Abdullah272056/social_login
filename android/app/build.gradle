@@ -27,7 +27,8 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
+//    compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -55,7 +56,8 @@ android {
 
         multiDexEnabled true
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 33
+        compileSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -86,6 +88,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.android.support:multidex:1.0.3'
 
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
